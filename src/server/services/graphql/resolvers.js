@@ -2,6 +2,14 @@ import logger from '../../helpers/logger';
 
 let posts = [
     {
+        id: 1,
+        text: 'Lorem ipsum',
+        user: {
+            avatar: '/uploads/avatar2.png',
+            username: 'Test User 2'
+        }
+    },
+    {
         id: 2,
         text: 'Lorem ipsum',
         user: {
@@ -9,14 +17,6 @@ let posts = [
             username: 'Test User'
         }
     },
-    {
-        id: 1,
-        text: 'Lorem ipsum',
-        user: {
-            avatar: '/uploads/avatar2.png',
-            username: 'Test User 2'
-        }
-    }
 ];
 
 const resolvers = {
