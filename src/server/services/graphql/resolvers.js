@@ -37,6 +37,22 @@ export default function resolver() {
             }
         },
         RootQuery: {
+            postsFeed(root, { page, limit }, context) {
+                let skip = 0;
+                if (page && limit) {
+                    skip = page * limit;
+                }
+                let query = {
+                    order: [['createdAt', 'DESC']],
+                    offset: skip,
+                };
+                if (limit) {
+                    query.limit = limit;
+                }
+                return {
+                    posts: Post.findAll(query)
+                };
+            },
             posts(root, args, context) {
                 return Post.findAll({order: [['createdAt', 'DESC']]});
             },
@@ -66,10 +82,9 @@ export default function resolver() {
                         model: User,
                         required: true,
                     },
-                        {
-                            model: Message,
-                        }
-                    ],
+                    {
+                        model: Message,
+                    }],
                 });
             },
         },
