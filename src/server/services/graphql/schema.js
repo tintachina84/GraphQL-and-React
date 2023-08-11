@@ -54,6 +54,10 @@ const typeDefinitions = `
     avatar: String!
   }
 
+  type Response {
+    success: Boolean
+  }
+
   type RootMutation {
     addPost (
       post: PostInput!
@@ -64,6 +68,9 @@ const typeDefinitions = `
     addMessage (
       message: MessageInput!
     ): Message
+    deletePost (
+      postId: Int!
+    ): Response
   }
 
   schema {
