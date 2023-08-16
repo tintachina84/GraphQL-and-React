@@ -33,3 +33,8 @@ npm run client:build
 npm run client
 npm run server
 ```
+
+Run the following commands in the project root directory for styleguide:
+```shell
+npx styleguidist build
+```
