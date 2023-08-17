@@ -38,3 +38,8 @@ Run the following commands in the project root directory for styleguide:
 ```shell
 npx styleguidist build
 ```
+
+Run the following commands in the project root directory for jwt secret key:
+```shell
+export JWT_SECRET=awv4BcIzsRysXkhoSAb8t8lNENgXSqBruVlLwd45kGdYjeJHLap9LUJ1t9DTdw36DvLcWs3qEkPyCY6vOyNljlh2Er952h2gDzYwG82rs1qfTzdVIg89KTaQ4SWI1YGY
+```
