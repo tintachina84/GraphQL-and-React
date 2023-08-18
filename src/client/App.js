@@ -4,11 +4,18 @@ import Feed from './Feed';
 import Chats from './Chats';
 import Bar from "./components/bar";
 import LoginRegisterForm from './components/loginregister';
+import { useCurrentUserQuery } from './apollo/queries/currentUserQuery';
+import Loading from './components/loading';
 import './components/fontawesome';
 import '../../assets/css/style.css';
 
 const App = () => {
     const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('jwt'));
+    const { data, error, loading, refetch } = useCurrentUserQuery();
+
+    if(loading) {
+        return <Loading />;
+    }
 
     return (
         <div className="container">

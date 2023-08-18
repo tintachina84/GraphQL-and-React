@@ -32,6 +32,7 @@ const typeDefinitions = `
   }
 
   type RootQuery {
+    currentUser: User @auth
     posts: [Post]
     chats: [Chat] @auth
     chat(chatId: Int): Chat
